@@ -7,7 +7,7 @@ Movies::~Movies() {
 
 }
 bool Movies::addMovie(Movie& m) {
-	for (Movie movie in movies) {
+	for (Movie movie: movies) {
 		if (movie.getMovieName() == m.getMovieName()) {
 			cout << "Movie already exists in the collection" << endl;
 		}
@@ -21,7 +21,7 @@ bool Movies::addMovie(Movie& m) {
 
 bool Movies::addMovie(string name, string rating, int watched) {
 	Movie newMovie(name, rating, watched);
-	for (Movie movie in movies) {
+	for (Movie movie: movies) {
 		if (movie.getMovieName() == newMovie.getMovieName()) {
 			cout << "Movie already exists in the collection" << endl;
 		}
@@ -35,14 +35,14 @@ bool Movies::addMovie(string name, string rating, int watched) {
 
 void Movies::displayMovies() {
 	cout << "===============================" << endl;
-	for (Movie movie in movies) {
+	for (Movie movie: movies) {
 		movie.displayMovie();
 	}
 	cout << "===============================" << endl;
 }
 
 bool Movies::incrementWatched(string name) {
-	for (Movie movie in movies) {
+	for (Movie movie: movies) {
 		if (movie.getMovieName() == name) {
 			movie.setMovieWatched((movie.getMovieWatched) + 1);
 		}
